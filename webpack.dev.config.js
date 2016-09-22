@@ -4,6 +4,10 @@ const webpack = require('webpack')
 module.exports = {
   devtool: 'eval',
 
+  node: {
+    fs: 'empty'
+  },
+
   entry: [
     'webpack-dev-server/client?http://localhost:5000',
     'webpack/hot/only-dev-server',
@@ -35,5 +39,12 @@ module.exports = {
       { test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
         loader: 'file'}
     ]
+  },
+
+  node: {
+    console: true,
+    fs: 'empty',
+    net: 'empty',
+    tls: 'empty'
   }
 }
